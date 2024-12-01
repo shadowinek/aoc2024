@@ -25,11 +25,11 @@ class Puzzle01 extends AbstractPuzzle
     public function runPart02(): int
     {
         $this->loadData();
-        $occurences = array_count_values($this->rightNumbers);
+        $occurrences = array_count_values($this->rightNumbers);
         $similarity = 0;
 
         foreach ($this->leftNumbers as $leftNumber) {
-            $similarity += $leftNumber * ($occurences[$leftNumber] ?? 0);
+            $similarity += $leftNumber * ($occurrences[$leftNumber] ?? 0);
         }
 
         return $similarity;
