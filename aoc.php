@@ -3,7 +3,7 @@
 ini_set("memory_limit", "-1");
 set_time_limit(0);
 
-require_once('vendor/autoload.php);
+require_once('vendor/autoload.php');
 
 use Shadowinek\Aoc2024\AoC;
 
