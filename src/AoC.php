@@ -25,7 +25,7 @@ class AoC
         $data = $this->readInput($puzzle, $real_input, $second_input);
         $expected = include_once(__DIR__ . '/../data/expected.php');
 
-        $class = 'Shadowinek\\Aoc2023\\Puzzle' . $this->getNumberString($puzzle);
+        $class = 'Shadowinek\\Aoc2024\\Puzzle' . $this->getNumberString($puzzle);
         $method = 'runPart' . $this->getNumberString($part);
 
         echo 'Puzzle:   ' . $this->getNumberString($puzzle) . PHP_EOL;
