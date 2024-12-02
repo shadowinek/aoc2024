@@ -4,14 +4,13 @@ namespace Shadowinek\Aoc2024;
 
 class AoC
 {
-    private function readInput(int $puzzle, bool $real_input, bool $second_input): array
+    private function readInput(int $puzzle, bool $real_input): array
     {
         return file(
             sprintf(
-                __DIR__ . '/../input/input_%s%s%s',
-                $this->getNumberString($puzzle),
+                __DIR__ . '/../input%s/input_%s',
                 $real_input ? '' : '_test',
-                $second_input ? '_02' : ''
+                $this->getNumberString($puzzle),
             ),FILE_IGNORE_NEW_LINES);
     }
 
@@ -20,9 +19,9 @@ class AoC
         return sprintf('%02d', $number);
     }
 
-    public function execute(int $puzzle, int $part, bool $real_input, bool $second_input = false): void
+    public function execute(int $puzzle, int $part, bool $real_input): void
     {
-        $data = $this->readInput($puzzle, $real_input, $second_input);
+        $data = $this->readInput($puzzle, $real_input);
         $expected = include_once(__DIR__ . '/../output/expected.php');
 
         $class = 'Shadowinek\\Aoc2024\\Puzzle' . $this->getNumberString($puzzle);

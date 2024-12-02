@@ -12,7 +12,7 @@ class Puzzle02 extends AbstractPuzzle
         $safe = 0;
 
         foreach ($this->inputs as $input) {
-            if ($this->isSafeWithErrors($input)) {
+            if ($this->isSafe($input)) {
                 $safe++;
             }
         }
