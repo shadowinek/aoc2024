@@ -38,11 +38,10 @@ class Puzzle01 extends AbstractPuzzle
     private function loadData(): void
     {
         foreach ($this->data as $line) {
-            $matches = [];
-            preg_match('/(\d+)\s*(\d+)/', $line, $matches);
+            $numbers = $this->parseNumbers($line);
 
-            $this->leftNumbers[] = (int) $matches[1];
-            $this->rightNumbers[] = (int) $matches[2];
+            $this->leftNumbers[] = (int) $numbers[0];
+            $this->rightNumbers[] = (int) $numbers[1];
         }
     }
 }
